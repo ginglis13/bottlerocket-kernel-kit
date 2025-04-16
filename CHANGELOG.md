@@ -1,3 +1,20 @@
+# v2.2.0 (2024-04-17)
+
+## OS Changes
+ * Add kernel 6.12 ([#93])
+ * Update to neuron 2.20.28.0 ([#96])
+ * Update kernel-6.1 from 6.1.131-143.221 to 6.1.132-147.221 ([#100])
+ * Update kernel-5.15 from 5.15.179-121.185 to 5.15.179-122.186 ([#100])
+
+## Build Changes
+ * Maintain full kernel configurations for kernels 5.15 and 6.1 ([#88])
+ * Vend microcode supackages per vendor and platform ([#93])
+
+[#88]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/88
+[#93]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/93
+[#96]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/96
+[#100]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/100
+
 # v2.1.0 (2024-04-02)
 
 ## OS Changes
