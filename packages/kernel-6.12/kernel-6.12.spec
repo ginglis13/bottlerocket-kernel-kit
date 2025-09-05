@@ -19,6 +19,8 @@ Source3: gpgkey-00FA2C1079260870A76D2C285749CAD8646D9185.asc
 Source100: config-bottlerocket
 Source101: config-full-bottlerocket-x86_64
 Source102: config-full-bottlerocket-aarch64
+Source103: config-bottlerocket-x86_64
+Source104: config-bottlerocket-aarch64
 
 # This list of FIPS modules is extracted from /etc/fipsmodules in the initramfs
 # after placing AL2023 in FIPS mode.
@@ -204,7 +206,12 @@ scripts/kconfig/merge_config.sh \
 %if "%{_cross_arch}" == "x86_64"
   ../config-microcode \
 %endif
-  %{S:100}
+  %{S:100} \
+%if "%{_cross_arch}" == "x86_64"
+  %{S:103}
+%else
+  %{S:104}
+%endif
 
 %if "%{_cross_arch}" == "x86_64"
 SOURCE_FILE="%{S:101}"

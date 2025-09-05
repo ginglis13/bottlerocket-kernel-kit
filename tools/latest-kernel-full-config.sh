@@ -121,20 +121,95 @@ inner_full_config() {
         export KCONFIG_CONFIG=bottlerocket_${arch}_defconfig
 
         br_cfg="${kernel_path}/config-bottlerocket"
+        br_cfg_arch="${kernel_path}/config-bottlerocket-${arch}"
         microcode_cfg="/microcode/${microcode_file}"
 
         pushd "linux-${version}" || bail "Could not move into linux-${version}"
 
         if [ "${arch}" = "aarch64" ]; then
             karch="arm64"
-            script_args=("../config-${arch}" "${br_cfg}")
+            script_args=("../config-${arch}" "${br_cfg}" "${br_cfg_arch}")
         elif [ "${arch}" = "x86_64" ]; then
             karch="x86"
-            script_args=("../config-${arch}" "${microcode_cfg}" "${br_cfg}")
+            script_args=("../config-${arch}" "${microcode_cfg}" "${br_cfg}" "${br_cfg_arch}")
         fi
 
         ARCH=${karch} ./scripts/kconfig/merge_config.sh "${script_args[@]}"
         mv -f "bottlerocket_${arch}_defconfig" "${kernel_path}/config-full-bottlerocket-${arch}" || bail "Failed to create config-full-bottlerocket-${arch}"
         popd || bail "Could not move around - 'popd' failed in merge_config loop. Lets stop before we break anything further."
     done
+
+    # Validate the generated configurations
+    echo "Validating generated kernel configurations..."
+    validate_kernel_configs
+}
+
+# Function to validate kernel configurations (similar to validate_config.sh)
+validate_kernel_configs() {
+    local success=true
+    local kernel_path=/kernel-package
+    
+    # Extract kernel version for validation
+    local version
+    version="$(rpm --query --nosignature --queryformat '%{VERSION}' kernel-source.rpm)"
+    local majorminor=${version%.*} # Trim after last '.', e.g. 6.1.132 -> 6.1
+    
+    for arch in x86_64 aarch64; do
+        echo "=== Validating kernel-${majorminor} ${arch} ==="
+        
+        # Check if files exist
+        if [[ ! -f "${kernel_path}/config-bottlerocket" ]]; then
+            echo "❌ Missing config-bottlerocket"
+            success=false
+            continue
+        fi
+        if [[ ! -f "${kernel_path}/config-bottlerocket-${arch}" ]]; then
+            echo "❌ Missing config-bottlerocket-${arch}"
+            success=false
+            continue
+        fi
+        if [[ ! -f "${kernel_path}/config-full-bottlerocket-${arch}" ]]; then
+            echo "❌ Missing config-full-bottlerocket-${arch}"
+            success=false
+            continue
+        fi
+        
+        # Extract config lines (ignoring comments by default to avoid issues with removed kernel options)
+        local common_configs
+        common_configs=$(grep "^CONFIG_" "${kernel_path}/config-bottlerocket" | sort)
+        local arch_configs
+        arch_configs=$(grep "^CONFIG_" "${kernel_path}/config-bottlerocket-${arch}" | sort)
+        local full_configs
+        full_configs=$(grep "^CONFIG_" "${kernel_path}/config-full-bottlerocket-${arch}" | sort)
+        
+        # Check common configs
+        local 
+        missing_common=$(comm -23 <(echo "$common_configs") <(echo "$full_configs"))
+        # Check arch-specific configs  
+        local missing_arch
+        missing_arch=$(comm -23 <(echo "$arch_configs") <(echo "$full_configs"))
+        
+        if [[ -n "$missing_common" ]]; then
+            echo "❌ Missing common configs:"
+            echo "$missing_common"
+            success=false
+        fi
+        
+        if [[ -n "$missing_arch" ]]; then
+            echo "❌ Missing arch-specific configs:"
+            echo "$missing_arch"
+            success=false
+        fi
+        
+        if [[ -z "$missing_common" && -z "$missing_arch" ]]; then
+            echo "✅ All configs present for ${arch}"
+        fi
+    done
+    
+    if $success; then
+        echo -e "\n🎉 All kernel config validations passed!"
+    else
+        echo -e "\n💥 Some kernel config validations failed!"
+        bail "Kernel configuration validation failed"
+    fi
 }

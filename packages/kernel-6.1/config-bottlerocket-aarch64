@@ -1,0 +1,8 @@
+# Architecture-specific configurations for aarch64
+
+# ARM64-specific crypto acceleration
+CONFIG_CRYPTO_SHA2_ARM64_CE=y
+CONFIG_CRYPTO_SHA512_ARM64_CE=y
+
+# compress arm64 kernels
+CONFIG_EFI_ZBOOT=y
