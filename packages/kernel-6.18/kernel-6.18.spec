@@ -80,6 +80,8 @@ Patch1004: 1004-af_unix-increase-default-max_dgram_qlen-to-512.patch
 # Select prerequisites for GPU drivers.
 Patch1005: 1005-drm-simpledrm-Select-prerequisites-for-gpu-drivers.patch
 Patch1006: 1006-Revert-selinux-fix-overlayfs-mmap-and-mprotect-acces.patch
+# Fix use-after-free in the Nitro Enclaves enclave-creation error path
+Patch1007: 1007-nitro_enclaves-fix-use-after-free-on-SLOT_ALLOC-fail.patch
 
 BuildRequires: bc
 BuildRequires: elfutils-devel
