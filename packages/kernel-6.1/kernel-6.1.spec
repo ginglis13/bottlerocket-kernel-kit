@@ -60,6 +60,8 @@ Patch1004: 1004-af_unix-increase-default-max_dgram_qlen-to-512.patch
 Patch1005: 1005-Revert-Revert-drm-fb_helper-improve-CONFIG_FB-depend.patch
 # Backport patch to ensure NUL-terminated task->comm buffer
 Patch1006: 1006-strscpy-write-destination-buffer-only-once.patch
+# Fix use-after-free in the Nitro Enclaves enclave-creation error path
+Patch1007: 1007-nitro_enclaves-fix-use-after-free-on-SLOT_ALLOC-fail.patch
 
 BuildRequires: bc
 BuildRequires: elfutils-devel
