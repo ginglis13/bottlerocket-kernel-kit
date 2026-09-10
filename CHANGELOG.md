@@ -1,3 +1,11 @@
+# v9.1.1 (2026-09-10)
+
+## OS Changes
+
+* Fix the cleanup ordering during `SLOT_ALLOC` failure in `ne_create_vm_ioctl()` ([#550])
+
+[#550]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/550
+
 # v9.1.0 (2026-09-03)
 
 ## Build Changes
