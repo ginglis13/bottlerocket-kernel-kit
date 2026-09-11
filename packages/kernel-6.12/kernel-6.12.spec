@@ -73,6 +73,8 @@ Patch1007: 1007-strscpy-write-destination-buffer-only-once.patch
 Patch1008: 1008-Revert-selinux-fix-overlayfs-mmap-and-mprotect-acces.patch
 # Fix use-after-free in the Nitro Enclaves enclave-creation error path
 Patch1009: 1009-nitro_enclaves-fix-use-after-free-on-SLOT_ALLOC-fail.patch
+# Initialize modname and offset in ftrace print_rec() to avoid GP fault
+Patch1010: 1010-ftrace-initialize-modname-and-offset-in-print_rec.patch
 
 BuildRequires: bc
 BuildRequires: elfutils-devel
