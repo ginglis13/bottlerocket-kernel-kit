@@ -82,6 +82,8 @@ Patch1005: 1005-drm-simpledrm-Select-prerequisites-for-gpu-drivers.patch
 Patch1006: 1006-Revert-selinux-fix-overlayfs-mmap-and-mprotect-acces.patch
 # Fix use-after-free in the Nitro Enclaves enclave-creation error path
 Patch1007: 1007-nitro_enclaves-fix-use-after-free-on-SLOT_ALLOC-fail.patch
+# Initialize modname and offset in ftrace print_rec() to avoid GP fault
+Patch1008: 1008-ftrace-initialize-modname-and-offset-in-print_rec.patch
 
 BuildRequires: bc
 BuildRequires: elfutils-devel
