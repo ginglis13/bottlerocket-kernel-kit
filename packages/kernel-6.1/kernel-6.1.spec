@@ -102,6 +102,10 @@ Requires: %{_cross_os}kmod-6.1-efa
 # Pull in FIPS-related files if needed.
 Requires: (%{name}-fips if %{_cross_os}image-feature(fips))
 
+# Only one kernel may be installed per image.
+Provides: %{_cross_os}kernel
+Conflicts: %{_cross_os}kernel
+
 %global _cross_ksrcdir %{_cross_usrsrc}/kernels
 %global _cross_kmoddir %{_cross_libdir}/modules/%{version}
 
