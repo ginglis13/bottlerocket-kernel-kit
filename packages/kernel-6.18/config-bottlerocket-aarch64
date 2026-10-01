@@ -3,5 +3,14 @@
 # compress arm64 kernels
 CONFIG_EFI_ZBOOT=y
 
+# Raise the CMA area count for the Nitro Enclaves host mempool. The mempool is a
+# boot-reserved CMA pool that backs enclave guest RAM and can split across up to
+# NE_MEMPOOL_MAX_REGIONS (16) areas; the AL2023 aarch64 base pins
+# CONFIG_CMA_AREAS=7, which would cap the pool and drop the rest. x86_64 already
+# resolves to 20 via the kernel's `default 20 if NUMA`, so this only needs to be
+# set on aarch64 to match. Raising the cap reserves no memory on its own; it only
+# sizes the static cma_areas[] bookkeeping array.
+CONFIG_CMA_AREAS=20
+
 # Disable unused filesystems on aarch64
 # CONFIG_JFFS2_FS is not set
