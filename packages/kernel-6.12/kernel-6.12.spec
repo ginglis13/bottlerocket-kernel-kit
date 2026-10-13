@@ -6,13 +6,13 @@
 %global neuron_inf1_ver 2.24.13
 
 Name: %{_cross_os}kernel-%{kmajor}
-Version: 6.12.110
+Version: 6.12.111
 Release: 1%{?dist}
 Summary: The Linux kernel
 License: GPL-2.0 WITH Linux-syscall-note
 URL: https://www.kernel.org/
 # Use latest-kernel-srpm-url.sh to get this.
-Source0: https://cdn.amazonlinux.com/al2023/blobstore/d0dc627f720e98b4afe1557287c2b445357e29b3d2abb600e3fb873af09f3924/kernel6.12-6.12.110-135.202.amzn2023.src.rpm
+Source0: https://cdn.amazonlinux.com/al2023/blobstore/72dd8b871c8d434ffb1975a45d3ed31bdec2db818fbf644a190926bad06f6ae8/kernel6.12-6.12.111-136.204.amzn2023.src.rpm
 Source1: gpgkey-B21C50FA44A99720EAA72F7FE951904AD832C631.asc
 
 # Custom Bottlerocket kernel configurations.
@@ -75,14 +75,8 @@ Patch1006: 1006-Select-prerequisites-for-gpu-drivers.patch
 # Backport patch to ensure NUL-terminated task->comm buffer
 Patch1007: 1007-strscpy-write-destination-buffer-only-once.patch
 Patch1008: 1008-Revert-selinux-fix-overlayfs-mmap-and-mprotect-acces.patch
-# Fix use-after-free in the Nitro Enclaves enclave-creation error path
-Patch1009: 1009-nitro_enclaves-fix-use-after-free-on-SLOT_ALLOC-fail.patch
 # Backport patch to disable LZ4 rolling decompression on EROFS
 Patch1010: 1010-erofs-disable-LZ4-rolling-decompression-for-now.patch
-# Reserve blocks for XFS parent pointer updates to avoid a filesystem shutdown
-Patch1011: 1011-xfs-initialise-args-total-for-parent-pointer-updates.patch
-# Revert accounting change that triggers a NULL-deref panic during memcg reclaim of split xarray nodes.
-Patch1012: 1012-Revert-xarray-honor-XA_FLAGS_ACCOUNT-in-xas_split_a.patch
 
 BuildRequires: bc
 BuildRequires: elfutils-devel
