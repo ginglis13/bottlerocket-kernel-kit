@@ -10,7 +10,7 @@ Summary: The Linux kernel
 License: GPL-2.0 WITH Linux-syscall-note
 URL: https://www.kernel.org/
 # Use latest-kernel-srpm-url.sh to get this.
-Source0: https://cdn.amazonlinux.com/al2023/blobstore/cabf7aca9f0c7f4a7de972ac73535aa5a2325eaa421b9754e68eedb403c34653/kernel-6.1.188-233.386.amzn2023.src.rpm
+Source0: https://cdn.amazonlinux.com/al2023/blobstore/2b3e9e0c29344b3125c641d6e02546bb3bd2969c33d7d7fd7a831225f9b3277e/kernel-6.1.188-233.393.amzn2023.src.rpm
 Source1: gpgkey-B21C50FA44A99720EAA72F7FE951904AD832C631.asc
 # Use latest-2.24-neuron-srpm-url.sh to get this.
 Source2: https://yum.repos.neuron.amazonaws.com/aws-neuronx-dkms-%{neuron_inf1_ver}.0.noarch.rpm
@@ -60,8 +60,6 @@ Patch1004: 1004-af_unix-increase-default-max_dgram_qlen-to-512.patch
 Patch1005: 1005-Revert-Revert-drm-fb_helper-improve-CONFIG_FB-depend.patch
 # Backport patch to ensure NUL-terminated task->comm buffer
 Patch1006: 1006-strscpy-write-destination-buffer-only-once.patch
-# Fix use-after-free in the Nitro Enclaves enclave-creation error path
-Patch1007: 1007-nitro_enclaves-fix-use-after-free-on-SLOT_ALLOC-fail.patch
 # Backport patch to disable LZ4 rolling decompression for EROFS
 Patch1008: 1008-erofs-disable-LZ4-rolling-decompression-for-now.patch
 
