@@ -1,3 +1,22 @@
+# v9.5.0 (2026-10-14)
+
+## OS Changes
+
+* Update kernel from 6.1.188-233.386 to 6.1.188-233.393 ([#589])
+* Update kernel from 6.12.110-135.202 to 6.12.111-136.204 ([#588])
+* Update kernel from 6.18.51-120.163 to 6.18.54-121.166 ([#591])
+* Move kmod-6.1, kmod-6.12 nvidia drivers to use overlayfs at boot ([#566])
+
+## Build Changes
+
+* Update Twoliter to `v0.26.0` ([#587])
+
+[#566]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/566
+[#587]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/587
+[#588]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/588
+[#589]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/589
+[#591]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/591
+
 # v9.4.1 (2026-10-07)
 
 ## OS Changes
