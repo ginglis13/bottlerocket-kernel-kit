@@ -101,6 +101,10 @@ Conflicts: %{_cross_os}image-feature(no-erofs-root-partition)
 # No runtime kernel-devel support
 Conflicts: %{_cross_os}image-feature(external-kmod-development)
 
+# Only one kernel may be installed per image.
+Provides: %{_cross_os}kernel
+Conflicts: %{_cross_os}kernel
+
 # Pull in expected modules.
 Requires: %{name}-modules = %{version}-%{release}
 

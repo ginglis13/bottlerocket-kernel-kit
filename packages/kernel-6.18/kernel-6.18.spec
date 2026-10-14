@@ -115,6 +115,10 @@ Conflicts: %{_cross_os}image-feature(external-kmod-development)
 # Legacy iptables support is not enabled in this kernel.
 Conflicts: %{_cross_os}iptables-legacy
 
+# Only one kernel may be installed per image.
+Provides: %{_cross_os}kernel
+Conflicts: %{_cross_os}kernel
+
 # Pull in expected modules.
 Requires: %{name}-modules = %{version}-%{release}
 
