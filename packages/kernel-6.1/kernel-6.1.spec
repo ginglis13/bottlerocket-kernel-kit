@@ -4,13 +4,13 @@
 %global neuron_inf1_ver 2.24.13
 
 Name: %{_cross_os}kernel-6.1
-Version: 6.1.188
+Version: 6.1.189
 Release: 1%{?dist}
 Summary: The Linux kernel
 License: GPL-2.0 WITH Linux-syscall-note
 URL: https://www.kernel.org/
 # Use latest-kernel-srpm-url.sh to get this.
-Source0: https://cdn.amazonlinux.com/al2023/blobstore/2b3e9e0c29344b3125c641d6e02546bb3bd2969c33d7d7fd7a831225f9b3277e/kernel-6.1.188-233.393.amzn2023.src.rpm
+Source0: https://cdn.amazonlinux.com/al2023/blobstore/99168244d30e63a5b41719afb417e4a64ab7eaddac2a890308e6011780950a8a/kernel-6.1.189-236.399.amzn2023.src.rpm
 Source1: gpgkey-B21C50FA44A99720EAA72F7FE951904AD832C631.asc
 # Use latest-2.24-neuron-srpm-url.sh to get this.
 Source2: https://yum.repos.neuron.amazonaws.com/aws-neuronx-dkms-%{neuron_inf1_ver}.0.noarch.rpm
