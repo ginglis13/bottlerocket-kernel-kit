@@ -6,13 +6,13 @@
 %global neuron_inf1_ver 2.24.13
 
 Name: %{_cross_os}kernel-%{kmajor}
-Version: 6.12.111
+Version: 6.12.113
 Release: 1%{?dist}
 Summary: The Linux kernel
 License: GPL-2.0 WITH Linux-syscall-note
 URL: https://www.kernel.org/
 # Use latest-kernel-srpm-url.sh to get this.
-Source0: https://cdn.amazonlinux.com/al2023/blobstore/72dd8b871c8d434ffb1975a45d3ed31bdec2db818fbf644a190926bad06f6ae8/kernel6.12-6.12.111-136.204.amzn2023.src.rpm
+Source0: https://cdn.amazonlinux.com/al2023/blobstore/72dd8b871c8d434ffb1975a45d3ed31bdec2db818fbf644a190926bad06f6ae8/kernel6.12-6.12.113-138.209.amzn2023.src.rpm
 Source1: gpgkey-B21C50FA44A99720EAA72F7FE951904AD832C631.asc
 
 # Custom Bottlerocket kernel configurations.
@@ -74,9 +74,12 @@ Patch1005: 1005-Lustre-cast-unsigned-long-to-pointer.patch
 Patch1006: 1006-Select-prerequisites-for-gpu-drivers.patch
 # Backport patch to ensure NUL-terminated task->comm buffer
 Patch1007: 1007-strscpy-write-destination-buffer-only-once.patch
-Patch1008: 1008-Revert-selinux-fix-overlayfs-mmap-and-mprotect-acces.patch
+Patch1008: 1008-Revert-selinux-recheck-intermediate-backing-files-on.patch
+Patch1009: 1009-Revert-selinux-preserve-user-SID-across-nested-backi.patch
+Patch1010: 1010-Revert-selinux-fix-incorrect-execmem-checks-on-overl.patch
+Patch1011: 1011-Revert-selinux-fix-overlayfs-mmap-and-mprotect-acces.patch
 # Backport patch to disable LZ4 rolling decompression on EROFS
-Patch1010: 1010-erofs-disable-LZ4-rolling-decompression-for-now.patch
+Patch1012: 1012-erofs-disable-LZ4-rolling-decompression-for-now.patch
 
 BuildRequires: bc
 BuildRequires: elfutils-devel

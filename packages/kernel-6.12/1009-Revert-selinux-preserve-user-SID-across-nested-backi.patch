@@ -1,0 +1,54 @@
+From b58a93556b71546a48605eda36c80dc811731215 Mon Sep 17 00:00:00 2001
+From: Piyush Jena <jepiyush@amazon.com>
+Date: Mon, 26 Oct 2026 09:55:37 +0000
+Subject: [PATCH] Revert "selinux: preserve user SID across nested backing
+ files"
+
+This reverts commit 6aaeec59aadcd1eafc18b049f1b759fb6b9d9569.
+---
+ security/selinux/hooks.c          | 9 +--------
+ security/selinux/include/objsec.h | 2 +-
+ 2 files changed, 2 insertions(+), 9 deletions(-)
+
+diff --git a/security/selinux/hooks.c b/security/selinux/hooks.c
+index fd1bbacb794e4..58332b6a396d2 100644
+--- a/security/selinux/hooks.c
++++ b/security/selinux/hooks.c
+@@ -3683,20 +3683,13 @@ static int selinux_file_alloc_security(struct file *file)
+ 	return 0;
+ }
+ 
+-static inline u32 selinux_file_user_sid(const struct file *file)
+-{
+-	if (unlikely(file->f_mode & FMODE_BACKING))
+-		return selinux_backing_file(file)->uf_sid;
+-	return selinux_file(file)->sid;
+-}
+-
+ static int selinux_backing_file_alloc(struct file *backing_file,
+ 				      const struct file *user_file)
+ {
+ 	struct backing_file_security_struct *bfsec;
+ 
+ 	bfsec = selinux_backing_file(backing_file);
+-	bfsec->uf_sid = selinux_file_user_sid(user_file);
++	bfsec->uf_sid = selinux_file(user_file)->sid;
+ 
+ 	return 0;
+ }
+diff --git a/security/selinux/include/objsec.h b/security/selinux/include/objsec.h
+index 414db56897506..dc42282a2c052 100644
+--- a/security/selinux/include/objsec.h
++++ b/security/selinux/include/objsec.h
+@@ -62,7 +62,7 @@ struct file_security_struct {
+ };
+ 
+ struct backing_file_security_struct {
+-	u32 uf_sid; /* top-level user file fsec->sid */
++	u32 uf_sid; /* associated user file fsec->sid */
+ };
+ 
+ struct superblock_security_struct {
+-- 
+2.52.0
+
