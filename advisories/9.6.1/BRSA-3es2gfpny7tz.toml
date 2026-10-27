@@ -1,0 +1,27 @@
+[advisory]
+id = "BRSA-3es2gfpny7tz"
+title = "kernel CVE-2026-98491"
+cve = "CVE-2026-98491"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: net: openvswitch: conntrack: avoid modifying shared unconfirmed ct entry"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.18"
+patched-version = "6.18.56"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

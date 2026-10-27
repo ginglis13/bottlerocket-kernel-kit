@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-y51ifaaxdwtg"
+title = "kernel CVE-2026-97437"
+cve = "CVE-2026-97437"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: ntfs3: fix out-of-bounds read in ntfs_dir_emit() and hdr_find_e()"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

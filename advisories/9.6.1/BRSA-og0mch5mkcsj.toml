@@ -1,0 +1,22 @@
+[advisory]
+id = "BRSA-og0mch5mkcsj"
+title = "kernel CVE-2026-98300"
+cve = "CVE-2026-98300"
+severity = "low"
+description = "In the Linux kernel, the following vulnerability has been resolved: tcp: Don't call skb_clone_and_charge_r() for close()d listener in tcp_v6_do_rcv()."
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

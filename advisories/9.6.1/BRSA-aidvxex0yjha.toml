@@ -1,0 +1,22 @@
+[advisory]
+id = "BRSA-aidvxex0yjha"
+title = "kernel CVE-2026-98201"
+cve = "CVE-2026-98201"
+severity = "low"
+description = "In the Linux kernel, the following vulnerability has been resolved: Input: zero ff_effect before compat copy in input_ff_effect_from_user"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

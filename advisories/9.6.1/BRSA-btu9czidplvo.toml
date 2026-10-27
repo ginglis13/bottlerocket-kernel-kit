@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-btu9czidplvo"
+title = "kernel CVE-2026-80734"
+cve = "CVE-2026-80734"
+severity = "low"
+description = "In the Linux kernel, the following vulnerability has been resolved: btrfs: initialize inode mapping flags for cached inodes"
+
+[[advisory.products]]
+package-name = "kernel-6.18"
+patched-version = "6.18.56"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

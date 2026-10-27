@@ -1,0 +1,27 @@
+[advisory]
+id = "BRSA-a8ufgnxrnbae"
+title = "kernel CVE-2026-98374"
+cve = "CVE-2026-98374"
+severity = "high"
+description = "In the Linux kernel, the following vulnerability has been resolved: tcp: fix use-after-free of retransmit_skb_hint in tcp_send_synack()"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.18"
+patched-version = "6.18.56"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-ucyu2zth79hl"
+title = "kernel CVE-2026-97958"
+cve = "CVE-2026-97958"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: net/sched: cls_api: Don't replay RTM_GETCHAIN in tc_ctl_chain()."
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

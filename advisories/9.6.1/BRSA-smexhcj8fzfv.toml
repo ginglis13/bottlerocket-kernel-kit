@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-smexhcj8fzfv"
+title = "kernel CVE-2026-97455"
+cve = "CVE-2026-97455"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: ACPICA: Fix use-after-free in acpi_ds_terminate_control_method()"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

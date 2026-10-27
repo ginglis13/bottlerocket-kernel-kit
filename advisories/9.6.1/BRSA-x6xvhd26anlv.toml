@@ -1,0 +1,27 @@
+[advisory]
+id = "BRSA-x6xvhd26anlv"
+title = "kernel CVE-2026-98588"
+cve = "CVE-2026-98588"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: bpf, sockmap: Reject max_entries > INT_MAX in sock_map_alloc"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.18"
+patched-version = "6.18.56"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

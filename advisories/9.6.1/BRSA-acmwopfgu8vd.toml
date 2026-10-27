@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-acmwopfgu8vd"
+title = "kernel CVE-2026-98404"
+cve = "CVE-2026-98404"
+severity = "low"
+description = "In the Linux kernel, the following vulnerability has been resolved: drm/virtio: Fix a NULL vs ERR_PTR() bug in virtio_gpu_user_framebuffer_create()"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

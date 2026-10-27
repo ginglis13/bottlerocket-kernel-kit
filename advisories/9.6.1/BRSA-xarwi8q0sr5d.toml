@@ -1,0 +1,22 @@
+[advisory]
+id = "BRSA-xarwi8q0sr5d"
+title = "kernel CVE-2026-98299"
+cve = "CVE-2026-98299"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: tcp: do not let tcp_rmem be set below 4096"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

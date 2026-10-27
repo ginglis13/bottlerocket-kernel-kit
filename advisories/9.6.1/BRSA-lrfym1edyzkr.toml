@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-lrfym1edyzkr"
+title = "kernel CVE-2026-98101"
+cve = "CVE-2026-98101"
+severity = "low"
+description = "In the Linux kernel, the following vulnerability has been resolved: ipv6: mcast: use copy-on-write RCU updates in ip6_mc_source()"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

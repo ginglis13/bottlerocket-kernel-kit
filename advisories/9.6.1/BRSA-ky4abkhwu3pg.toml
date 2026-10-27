@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-ky4abkhwu3pg"
+title = "kernel CVE-2026-93781"
+cve = "CVE-2026-93781"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: scsi: core: Do not block on tag allocation in scsi_eh_lock_door()"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"
