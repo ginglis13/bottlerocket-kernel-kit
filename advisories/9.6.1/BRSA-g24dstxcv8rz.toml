@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-g24dstxcv8rz"
+title = "kernel CVE-2026-97559"
+cve = "CVE-2026-97559"
+severity = "low"
+description = "In the Linux kernel, the following vulnerability has been resolved: smb: client: fail DACL rewrite when the new DACL exceeds 64K"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

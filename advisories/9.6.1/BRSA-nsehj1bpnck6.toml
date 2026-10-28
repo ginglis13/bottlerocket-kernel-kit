@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-nsehj1bpnck6"
+title = "kernel CVE-2026-97451"
+cve = "CVE-2026-97451"
+severity = "low"
+description = "In the Linux kernel, the following vulnerability has been resolved: ACPICA: Fix integer overflow in acpi_ex_opcode_3A_1T_1R() (mid_op)"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

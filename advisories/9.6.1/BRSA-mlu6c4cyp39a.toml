@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-mlu6c4cyp39a"
+title = "kernel CVE-2026-98015"
+cve = "CVE-2026-98015"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: net/mlx5: E-Switch: fix use-after-free in mlx5_eswitch_termtbl_put"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

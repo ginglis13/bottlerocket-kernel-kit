@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-j0jbn2axjzws"
+title = "kernel CVE-2026-97446"
+cve = "CVE-2026-97446"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: ACPICA: Fix NULL pointer dereference in acpi_ns_custom_package()"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

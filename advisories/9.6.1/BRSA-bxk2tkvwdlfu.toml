@@ -1,0 +1,22 @@
+[advisory]
+id = "BRSA-bxk2tkvwdlfu"
+title = "kernel CVE-2026-98262"
+cve = "CVE-2026-98262"
+severity = "low"
+description = "In the Linux kernel, the following vulnerability has been resolved: ata: libahci: clear PxCLBU and PxFBU for AHCI_HFLAG_32BIT_ONLY"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

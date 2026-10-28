@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-j7kxe46bo6lr"
+title = "kernel CVE-2026-72463"
+cve = "CVE-2026-72463"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: xfrm: Fix dev use-after-free in xfrm async resumption"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-suht1apid7z3"
+title = "kernel CVE-2026-89503"
+cve = "CVE-2026-89503"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: ring-buffer: Fix subbuf resize race with ring_buffer_alloc_read_page() ring_buffer_alloc_read_page() is racy with ring_buffer_subbuf_order_set,"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["aarch64", "x86_64"]
+version = "9.6.1"

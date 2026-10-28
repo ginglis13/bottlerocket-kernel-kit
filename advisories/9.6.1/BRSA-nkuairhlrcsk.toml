@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-nkuairhlrcsk"
+title = "kernel CVE-2026-98076"
+cve = "CVE-2026-98076"
+severity = "moderate"
+description = "In the Linux kernel, the following vulnerability has been resolved: tracing/probes: Fix use-after-free on field name/type of events with multiple probes"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

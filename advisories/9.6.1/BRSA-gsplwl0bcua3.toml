@@ -1,0 +1,17 @@
+[advisory]
+id = "BRSA-gsplwl0bcua3"
+title = "kernel CVE-2026-98074"
+cve = "CVE-2026-98074"
+severity = "low"
+description = "In the Linux kernel, the following vulnerability has been resolved: bonding: do not clear curr_active_slave prematurely when releasing all slaves"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"

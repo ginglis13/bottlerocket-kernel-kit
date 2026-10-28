@@ -1,0 +1,22 @@
+[advisory]
+id = "BRSA-nuolwpjrv0cu"
+title = "kernel CVE-2026-98167"
+cve = "CVE-2026-98167"
+severity = "high"
+description = "In the Linux kernel, the following vulnerability has been resolved: smb: client: fix server->total_read for compound encrypted PDUs"
+
+[[advisory.products]]
+package-name = "kernel-6.1"
+patched-version = "6.1.189"
+patched-epoch = "0"
+
+[[advisory.products]]
+package-name = "kernel-6.12"
+patched-version = "6.12.113"
+patched-epoch = "0"
+
+[updateinfo]
+author = "tianlyu"
+issue-date = 2026-10-26T23:42:18Z
+arches = ["x86_64", "aarch64"]
+version = "9.6.1"
